@@ -2,3 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: "Circe Rounded";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./fonts/circerounded-regular.woff2") format("woff2");
+  }
+}
+@layer base {
+  @font-face {
+    font-family: "Circe Rounded";
+    font-style: normal;
+    font-weight: 700;
+    src: url("./fonts/circerounded-bold.woff2") format("woff2");
+  }
+}
