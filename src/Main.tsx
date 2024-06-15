@@ -1,4 +1,6 @@
+import Sidebar from "./Sidebar"
+
 const Main:React.FC = () => {
-  return <div>Hello world!</div>;
+  return <Sidebar/>;
 };
 export default Main;

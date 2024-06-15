@@ -14,6 +14,10 @@ export default {
         "8D7FC7": "#8D7FC7",
         "008AFF": "#008AFF",
         "7362BC": "#7362BC",
+        EEEEFF: "#EEEEFF",
+        FDFDFF: "#FDFDFF",
+        D8ECFF: "#D8ECFF",
+        "434B74": "#434B74"
       },
     },
   },

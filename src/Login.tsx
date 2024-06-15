@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Logo from "./images/logo.png";
+import Logo from "./images/logo.svg";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
