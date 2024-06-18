@@ -1,9 +1,8 @@
-import sprites from "./images/sprites.svg";
-import avatarImage from "./images/avatar.jpg";
+import sprites from "../images/sprites.svg";
+import avatarImage from "../images/avatar.jpg";
 
 const Header: React.FC = () => {
   return (
-    <div className="w-[1154px]">
       <header className="w-full flex justify-between py-3 pl-8 pr-16 bg-FDFDFF rounded-[1.125rem] shadow-header">
         <div className="font-circe text-2xl text-323854">
           Добро пожаловать,
@@ -98,7 +97,6 @@ const Header: React.FC = () => {
           </div>
         </div>
       </header>
-    </div>
   );
 };
 export default Header;

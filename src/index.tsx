@@ -5,8 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 
 import App from "./App.tsx";
-import Main from "./Main.tsx";
-import Login from "./Login.tsx";
+import Login from "./pages/Login.tsx";
+import Main from "./pages/Main.tsx";
 
 const router = createBrowserRouter([
   {

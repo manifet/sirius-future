@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Logo from "./images/logo.svg";
+import logoImage from "../images/logo.svg";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const Login: React.FC = () => {
         method="POST"
       >
         <div className="w-20 h-20 object-contain mb-8">
-          <img src={Logo} alt="logo" className="w-full h-full" />
+          <img src={logoImage} alt="logo" className="w-full h-full" />
         </div>
         <h1 className="mb-4 text-[2.5rem] text-323854 leading-9 font-circe">
           Вход в Sirius Future
@@ -34,7 +34,7 @@ const Login: React.FC = () => {
           />
         </div>
         <div className="w-full mb-4">
-          <input type="checkbox" id="remember" className="hidden peer" />
+          <input className="hidden peer" type="checkbox" id="remember" />
           <label
             className="flex cursor-pointer items-center text-79747F font-circe text-xs before:peer-checked:bg-C8C5CD before:border-C8C5CD before:mr-2 before:block before:content-[' '] before:w-4 before:h-4 before:border-[0.0625rem] before:rounded-sm"
             htmlFor="remember"

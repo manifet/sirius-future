@@ -1,7 +1,7 @@
 import { useState } from "react";
-import logoText from "./images/logo-text.svg";
-import giftImg from "./images/gift.svg";
-import sprites from "./images/sprites.svg";
+import logoImageWithText from "../images/logo-text.svg";
+import giftImage from "../images/gift.svg";
+import sprites from "../images/sprites.svg";
 
 interface NavListItem {
   svgName: string;
@@ -27,9 +27,13 @@ const Sidebar: React.FC = () => {
     navList[0].navPath
   );
   return (
-    <aside className="w-full max-w-[14.75rem] pt-7 px-5 pb-6 rounded-[1.875rem] bg-EEEEFF">
+    <aside className="grow shrink-0 w-full max-w-[14.75rem] pt-7 px-5 pb-6 rounded-[1.875rem] bg-EEEEFF">
       <div className="w-full h-[3.625rem] flex justify-center items-center object-contain mb-10">
-        <img className="w-full h-full" src={logoText} alt="Logo with text" />
+        <img
+          className="w-full h-full"
+          src={logoImageWithText}
+          alt="Logo with text"
+        />
       </div>
       <nav className="w-[13.5rem] ml-[-1.25rem] mb-[3.125rem]">
         <ul className="w-full">
@@ -37,24 +41,24 @@ const Sidebar: React.FC = () => {
             const isActiveTab: boolean = item.navPath === activeTab;
             return (
               <li
-                key={index}
                 className={
                   "group pl-12 py-1.5 cursor-pointer flex items-center rounded-br-[1.875rem] rounded-tr-[1.875rem] hover:bg-8D7FC7 " +
                   (isActiveTab ? "bg-8D7FC7" : "bg-none")
                 }
+                key={index}
                 onClick={() => {
                   setActiveTab(item.navPath);
                 }}
               >
                 <div className="flex w-7 h-7 justify-center items-center">
                   <svg
-                    width="28"
-                    height="28"
-                    viewBox="0 0 28 28"
                     className={
                       "fill-transparent group-hover:stroke-white " +
                       (isActiveTab ? "stroke-white" : "stroke-434B74")
                     }
+                    width="28"
+                    height="28"
+                    viewBox="0 0 28 28"
                   >
                     <use xlinkHref={sprites + `#${item.svgName}`} />
                   </svg>
@@ -87,7 +91,7 @@ const Sidebar: React.FC = () => {
           Узнать
         </a>
         <div className="w-[5.125rem] h-[6.125rem] object-contain flex justify-center items-center absolute bottom-[-2rem] right-[-0.5rem]">
-          <img className="w-full h-full" src={giftImg} alt="Gift image" />
+          <img className="w-full h-full" src={giftImage} alt="Gift image" />
         </div>
       </div>
     </aside>
