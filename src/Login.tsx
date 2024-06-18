@@ -66,7 +66,6 @@ const Login: React.FC = () => {
           </a>
         </div>
       </form>
-
       <div className="fixed right-1/2 bottom-8 translate-x-1/2">
         <span className="mr-2 cursor-pointer font-circe text-2xl text-7362BC">
           RU
