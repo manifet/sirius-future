@@ -18,7 +18,10 @@ export default {
         FDFDFF: "#FDFDFF",
         D8ECFF: "#D8ECFF",
         "434B74": "#434B74",
-        "E84849": "#E84849",
+        E84849: "#E84849",
+        FFF1CB: "#FFF1CB",
+        E8CBFF: "#E8CBFF",
+        DECFFF: "#DECFFF",
       },
       boxShadow: {
         header:

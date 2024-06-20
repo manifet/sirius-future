@@ -27,7 +27,7 @@ const Sidebar: React.FC = () => {
     navList[0].navPath
   );
   return (
-    <aside className="grow shrink-0 w-full max-w-[14.75rem] pt-7 px-5 pb-6 rounded-[1.875rem] bg-EEEEFF">
+    <aside className="mt-6 grow shrink-0 w-full flex flex-col justify-between max-w-[14.75rem] pt-7 px-5 pb-6 rounded-[1.875rem] bg-EEEEFF">
       <div className="w-full h-[3.625rem] flex justify-center items-center object-contain mb-10">
         <img
           className="w-full h-full"
