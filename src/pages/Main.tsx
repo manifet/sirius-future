@@ -1,13 +1,7 @@
-import { useEffect, useState } from "react";
+import Timer from "../components/Timer";
 import PagesWrapper from "../components/utils/PagesWrapper";
 import giftBannerImage from "../images/gift-banner.png";
 import sprites from "../images/sprites.svg";
-
-interface Timer {
-  days: number;
-  hours: number;
-  minutes: number;
-}
 
 interface ActivitiesBalance {
   name: string;
@@ -54,25 +48,6 @@ const comingLessonsList: ComingLessonsListType = [
   },
 ];
 const Main: React.FC = () => {
-  const [timersSeconds, setTimerSeconds] = useState<number>(604800);
-  const [timer, setTimer] = useState<Timer>({ days: 0, hours: 0, minutes: 0 });
-
-  useEffect(() => {
-    if (timersSeconds > 0) {
-      const interval = setInterval(() => {
-        setTimerSeconds((timersSeconds) => timersSeconds - 1);
-        clearInterval(interval);
-      }, 1000);
-    }
-  }, [timersSeconds]);
-
-  useEffect(() => {
-    const days = Math.floor(timersSeconds / 86400);
-    const hours = Math.floor((timersSeconds % 86400) / 3600);
-    const minutes = Math.floor((timersSeconds % 3600) / 60);
-    setTimer({ days, hours, minutes });
-  }, [timersSeconds]);
-
   return (
     <PagesWrapper>
       <div className="flex justify-between w-full h-[15.5rem] mb-5">
@@ -94,25 +69,7 @@ const Main: React.FC = () => {
             />
           </div>
         </div>
-        <div className="h-full flex flex-auto flex-col justify-between py-8 px-[3.875rem] rounded-[1.875rem] max-w-[21.5rem] bg-FFF1CB">
-          <div className="font-circe text-323854 text-xl leading-5 text-center">
-            Следующее занятие начнется через:
-          </div>
-          <div className="font-circe text-323854 flex justify-center">
-            <span className="text-[0.9375rem] mr-3">
-              <span className="text-4xl">{timer.days}</span> д
-            </span>
-            <span className="text-[0.9375rem] mr-3">
-              <span className="text-4xl">{timer.hours}</span> ч
-            </span>
-            <span className="text-[0.9375rem]">
-              <span className="text-4xl">{timer.minutes}</span> мин
-            </span>
-          </div>
-          <div className="cursor-pointer flex justify-center items-center w-full p-3 font-circe text-base text-323854 rounded-[1.875rem] border-[0.0625rem] border-323854 border-dashed">
-            Button
-          </div>
-        </div>
+        <Timer seconds={604800} />
         <div className="h-full flex flex-col justify-between grow shrink-0 max-w-[10.125rem]">
           <a
             className="w-full h-full rounded-[1.25rem] p-3 flex flex-col items-end bg-D8ECFF mb-5"
@@ -181,9 +138,12 @@ const Main: React.FC = () => {
             Баланс занятий
           </div>
           <ul className="flex flex-col w-full">
-            {comingLessonsList.map((item) => (
-              <li className="pt-3 pb-2 flex items-center border-b-[0.0625rem] border-EEEEFF">
-                <div className="w-[2.625rem] font-circe flex flex-col text-[2rem] leading-8 text-323854 mr-4">
+            {comingLessonsList.map((item, index) => (
+              <li
+                className="pt-3 pb-2 flex items-center border-b-[0.0625rem] border-EEEEFF"
+                key={index}
+              >
+                <div className="w-[2.625rem] font-circe flex flex-col items-center text-[2rem] leading-8 text-323854 mr-4">
                   {item.day}
                   <span className="text-xs">{item.month}</span>
                 </div>
@@ -227,4 +187,5 @@ const Main: React.FC = () => {
     </PagesWrapper>
   );
 };
+
 export default Main;
