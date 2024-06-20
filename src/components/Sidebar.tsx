@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import logoImageWithText from "../images/logo-text.svg";
 import giftImage from "../images/gift.svg";
 import sprites from "../images/sprites.svg";
@@ -12,20 +13,26 @@ interface NavListItem {
 type NavListType = NavListItem[];
 
 const navList: NavListType = [
-  { svgName: "home", name: "Главная", navPath: "main" },
-  { svgName: "calendar", name: "Расписание", navPath: "schedule" },
-  { svgName: "wallet", name: "Оплата", navPath: "payment" },
-  { svgName: "reward", name: "Достижения", navPath: "achievements" },
-  { svgName: "puzzle", name: "Тренажеры", navPath: "trainers" },
-  { svgName: "folder", name: "Библиотека", navPath: "library" },
-  { svgName: "headphones", name: "Проверка связи", navPath: "communication" },
-  { svgName: "settings", name: "Настройки", navPath: "settings" },
-  { svgName: "question", name: "Вопросы", navPath: "questions" },
+  { svgName: "home", name: "Главная", navPath: "/main" },
+  { svgName: "calendar", name: "Расписание", navPath: "/schedule" },
+  { svgName: "wallet", name: "Оплата", navPath: "/payment" },
+  { svgName: "reward", name: "Достижения", navPath: "/achievements" },
+  { svgName: "puzzle", name: "Тренажеры", navPath: "/trainers" },
+  { svgName: "folder", name: "Библиотека", navPath: "/library" },
+  { svgName: "headphones", name: "Проверка связи", navPath: "/communication" },
+  { svgName: "settings", name: "Настройки", navPath: "/settings" },
+  { svgName: "question", name: "Вопросы", navPath: "/questions" },
 ];
 const Sidebar: React.FC = () => {
+  const location = useLocation();
   const [activeTab, setActiveTab] = useState<NavListItem["navPath"]>(
-    navList[0].navPath
+    location.pathname
   );
+
+  useEffect(() => {
+    setActiveTab(location.pathname);
+  }, [location.pathname]);
+
   return (
     <aside className="mt-6 grow shrink-0 w-full flex flex-col justify-between max-w-[14.75rem] pt-7 px-5 pb-6 rounded-[1.875rem] bg-EEEEFF">
       <div className="w-full h-[3.625rem] flex justify-center items-center object-contain mb-10">
@@ -46,9 +53,6 @@ const Sidebar: React.FC = () => {
                   (isActiveTab ? "bg-8D7FC7" : "bg-none")
                 }
                 key={index}
-                onClick={() => {
-                  setActiveTab(item.navPath);
-                }}
               >
                 <div className="flex w-7 h-7 justify-center items-center">
                   <svg
