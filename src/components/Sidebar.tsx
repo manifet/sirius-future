@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import logoImageWithText from "../images/logo-text.svg";
 import giftImage from "../images/gift.svg";
 import sprites from "../images/sprites.svg";
@@ -28,7 +28,7 @@ const Sidebar: React.FC = () => {
   const [activeTab, setActiveTab] = useState<NavListItem["navPath"]>(
     location.pathname
   );
-
+  const navigate = useNavigate();
   useEffect(() => {
     setActiveTab(location.pathname);
   }, [location.pathname]);
@@ -53,6 +53,7 @@ const Sidebar: React.FC = () => {
                   (isActiveTab ? "bg-8D7FC7" : "bg-none")
                 }
                 key={index}
+                onClick={() => navigate(item.navPath)}
               >
                 <div className="flex w-7 h-7 justify-center items-center">
                   <svg

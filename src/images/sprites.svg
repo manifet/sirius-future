@@ -210,4 +210,20 @@
             d="M9.41421 5.25247C10.1953 6.03352 10.1953 7.29985 9.41421 8.0809C8.63316 8.86195 7.36683 8.86195 6.58579 8.0809C5.80474 7.29985 5.80474 6.03352 6.58579 5.25247C7.36683 4.47143 8.63316 4.47143 9.41421 5.25247"
             stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
+    <symbol id="arrow-right">
+        <path d="M15 6L1 6" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        <path d="M10 11L15 6" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        <path d="M10 1L15 6" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+    </symbol>
+    <symbol id="arrow-left">
+        <path d="M1 6L15 6" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        <path d="M6 1L1 6" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        <path d="M6 11L1 6" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+    </symbol>
 </svg>

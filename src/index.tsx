@@ -7,6 +7,7 @@ import "./index.css";
 import App from "./App.tsx";
 import Login from "./pages/Login.tsx";
 import Main from "./pages/Main.tsx";
+import Schedule from "./pages/Schedule.tsx";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <Login /> },
       { path: "main", element: <Main /> },
+      { path: "schedule", element: <Schedule /> },
     ],
   },
 ]);
