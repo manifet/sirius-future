@@ -20,17 +20,17 @@ const Calendar: React.FC = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-auto flex-col">
       <CalendarUtils
         currentDate={currentDate}
         onNextMonth={nextMonth}
         onPrevMonth={prevMonth}
       />
-      <table className="flex flex-auto flex-col">
+      <div className="flex flex-auto flex-col">
         <CalendarHeader />
         <CalendarBody currentDate={currentDate} />
-      </table>
-    </>
+      </div>
+    </div>
   );
 };
 

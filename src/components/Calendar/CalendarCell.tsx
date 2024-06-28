@@ -4,9 +4,9 @@ interface CalendarCellProps {
 
 const CalendarCell: React.FC<CalendarCellProps> = ({ day }) => {
   return (
-    <td className="flex flex-col flex-auto basis-[153px] h-[6.3125rem] p-1 border-ECECEC border-r-[0.0625rem] border-b-[0.0625rem]">
-      <div className="w-full flex justify-end font-circe text-xs text-323854">{day}</div>
-    </td>
+    <div className="flex flex-auto w-full flex-col p-1 border-r-[0.0625rem]">
+      <span className="w-full text-end font-circe text-xs text-323854">{day}</span>
+    </div>
   );
 };
 export default CalendarCell;
