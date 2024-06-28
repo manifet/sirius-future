@@ -48,7 +48,7 @@ const CalendarBody: React.FC<CalendarBodyProps> = ({ currentDate }) => {
               {Array.from(
                 { length: tableColums },
                 (_, dayIndex) =>
-                  calendarDays[weekIndex * 7 + dayIndex] || <div>Empty</div>
+                  calendarDays[weekIndex * tableColums + dayIndex] || <div>Empty</div>
               )}
             </ul>
           </li>
