@@ -34,7 +34,7 @@ const Sidebar: React.FC = () => {
   }, [location.pathname]);
 
   return (
-    <aside className="mt-6 grow shrink-0 w-full flex flex-col justify-between max-w-[14.75rem] pt-7 px-5 pb-6 rounded-[1.875rem] bg-EEEEFF">
+    <aside className="h-full mt-6 grow shrink-0 w-full flex flex-col justify-between max-w-[14.75rem] pt-11 px-5 pb-6 rounded-[1.875rem] bg-EEEEFF">
       <div className="w-full h-[3.625rem] flex justify-center items-center object-contain mb-10">
         <img
           className="w-full h-full"
@@ -82,7 +82,7 @@ const Sidebar: React.FC = () => {
         </ul>
       </nav>
       <div className="w-full pt-4 pl-4 pr-8 pb-2.5 rounded-2xl bg-FDFDFF relative overflow-hidden">
-        <span className="font-circe text-base text-323854 mb-1">
+        <span className="font-circe text-base text-323854 mb-1 leading-5">
           Учитесь бесплатно
         </span>
         <p className="text-[0.625rem] leading-3 mb-2.5">
@@ -90,7 +90,7 @@ const Sidebar: React.FC = () => {
           подарки!
         </p>
         <a
-          className="w-fit bg-D8ECFF rounded-2xl py-2 px-4 flex items-center justify-center font-circe text-sm text-323854"
+          className="w-fit bg-D8ECFF rounded-2xl py-2 px-4 flex items-center justify-center font-circe text-sm text-323854 leading-4"
           href="#"
         >
           Узнать

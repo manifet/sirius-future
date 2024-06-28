@@ -52,7 +52,7 @@ const Main: React.FC = () => {
     <PagesWrapper>
       <div className="flex justify-between w-full h-[15.5rem] mb-5">
         <div className="h-full py-14 px-10 flex flex-auto max-w-[32.875rem] rounded-[1.875rem] bg-7362BC relative overflow-hidden">
-          <div className="flex flex-col max-w-[18.75rem]">
+          <div className="flex flex-col max-w-[20rem]">
             <div className="font-circe text-white text-[2rem] leading-[2rem] mb-4">
               До 31 декабря любой курс со скидкой 20%
             </div>
@@ -109,7 +109,7 @@ const Main: React.FC = () => {
           </a>
         </div>
       </div>
-      <div className="flex justify-between h-[23.25rem]">
+      <div className="flex justify-between flex-auto">
         <div className="h-full max-w-[21.5rem] flex flex-auto flex-col justify-between items-center p-7 border-[0.0625rem] border-7362BC rounded-[1.875rem]">
           <div className="w-full font-circe text-2xl leading-6 text-323854">
             Баланс занятий
