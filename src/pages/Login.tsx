@@ -1,15 +1,19 @@
+import { useNavigate } from "react-router-dom";
+
 import { useAppDispatch } from "../models/hooks";
 import { authActions } from "../models/authorization/";
 
 import logoImage from "../images/logo.svg";
 
 const Login: React.FC = () => {
+  const navigate = useNavigate();
 
   const { logIn } = authActions;
   const dispatch = useAppDispatch();
 
   const handleSubmit = () => {
     dispatch(logIn());
+    navigate("/")
   };
 
   return (

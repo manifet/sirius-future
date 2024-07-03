@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { useAppDispatch } from "../models/hooks";
 import { authActions } from "../models/authorization/";
@@ -11,7 +11,8 @@ const Header: React.FC = () => {
   const [exitWindowActive, setExitWindowActive] = useState<boolean>(false);
 
   const location = useLocation();
-
+  const navigate = useNavigate();
+  
   const dispatch = useAppDispatch();
   const { logOut } = authActions;
 
@@ -19,6 +20,7 @@ const Header: React.FC = () => {
 
   const handleExit = () => {
     dispatch(logOut());
+    navigate("/");
   };
 
   return (
