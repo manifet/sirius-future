@@ -10,7 +10,7 @@ interface TimerProps {
 }
 const Timer: React.FC<TimerProps> = ({ seconds }) => {
   const [timersSeconds, setTimerSeconds] = useState<number>(seconds);
-  const [TimerData, setTimerData] = useState<TimerData>({
+  const [timerData, setTimerData] = useState<TimerData>({
     days: 0,
     hours: 0,
     minutes: 0,
@@ -38,13 +38,13 @@ const Timer: React.FC<TimerProps> = ({ seconds }) => {
       </div>
       <div className="font-circe text-323854 flex justify-center">
         <span className="text-[0.9375rem] mr-3">
-          <span className="text-4xl">{TimerData.days}</span> д
+          <span className="text-4xl">{timerData.days}</span> д
         </span>
         <span className="text-[0.9375rem] mr-3">
-          <span className="text-4xl">{TimerData.hours}</span> ч
+          <span className="text-4xl">{timerData.hours}</span> ч
         </span>
         <span className="text-[0.9375rem]">
-          <span className="text-4xl">{TimerData.minutes}</span> мин
+          <span className="text-4xl">{timerData.minutes}</span> мин
         </span>
       </div>
       <div className="cursor-pointer flex justify-center items-center w-full p-3 font-circe text-base text-323854 rounded-[1.875rem] border-[0.0625rem] border-323854 border-dashed">

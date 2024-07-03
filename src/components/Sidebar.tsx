@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import logoImageWithText from "../images/logo-text.svg";
 import giftImage from "../images/gift.svg";
@@ -25,13 +24,7 @@ const navList: NavListType = [
 ];
 const Sidebar: React.FC = () => {
   const location = useLocation();
-  const [activeTab, setActiveTab] = useState<NavListItem["navPath"]>(
-    location.pathname
-  );
   const navigate = useNavigate();
-  useEffect(() => {
-    setActiveTab(location.pathname);
-  }, [location.pathname]);
 
   return (
     <aside className="h-full mt-6 grow shrink-0 w-full flex flex-col justify-between max-w-[14.75rem] pt-11 px-5 pb-6 rounded-[1.875rem] bg-EEEEFF">
@@ -45,7 +38,7 @@ const Sidebar: React.FC = () => {
       <nav className="w-[13.5rem] ml-[-1.25rem] mb-[3.125rem]">
         <ul className="w-full">
           {navList.map((item, index) => {
-            const isActiveTab: boolean = item.navPath === activeTab;
+            const isActiveTab: boolean = item.navPath === location.pathname;
             return (
               <li
                 className={
