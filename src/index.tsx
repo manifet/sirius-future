@@ -1,8 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Provider as ReduxProvider } from "react-redux";
 
 import "./index.css";
+import store from "./models/store.ts";
+import RouteWrapper from "./components/utils/RouteWrapper.tsx";
 
 import App from "./App.tsx";
 import Login from "./pages/Login.tsx";
@@ -15,15 +18,31 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <div>404</div>,
     children: [
-      { path: "", element: <Login /> },
-      { path: "main", element: <Main /> },
-      { path: "schedule", element: <Schedule /> },
+      { path: "login", element: <Login /> },
+      {
+        index: true,
+        element: (
+          <RouteWrapper>
+            <Main />
+          </RouteWrapper>
+        ),
+      },
+      {
+        path: "schedule",
+        element: (
+          <RouteWrapper>
+            <Schedule />
+          </RouteWrapper>
+        ),
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ReduxProvider store={store}>
+      <RouterProvider router={router} />
+    </ReduxProvider>
   </React.StrictMode>
 );

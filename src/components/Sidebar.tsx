@@ -13,7 +13,7 @@ interface NavListItem {
 type NavListType = NavListItem[];
 
 const navList: NavListType = [
-  { svgName: "home", name: "Главная", navPath: "/main" },
+  { svgName: "home", name: "Главная", navPath: "/" },
   { svgName: "calendar", name: "Расписание", navPath: "/schedule" },
   { svgName: "wallet", name: "Оплата", navPath: "/payment" },
   { svgName: "reward", name: "Достижения", navPath: "/achievements" },

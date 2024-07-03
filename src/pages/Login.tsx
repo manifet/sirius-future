@@ -1,11 +1,17 @@
-import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../models/hooks";
+import { authActions } from "../models/authorization/";
+
 import logoImage from "../images/logo.svg";
 
 const Login: React.FC = () => {
-  const navigate = useNavigate();
-  const logIn = () => {
-    navigate("/main");
+
+  const { logIn } = authActions;
+  const dispatch = useAppDispatch();
+
+  const handleSubmit = () => {
+    dispatch(logIn());
   };
+
   return (
     <>
       <form
@@ -45,7 +51,7 @@ const Login: React.FC = () => {
         <button
           className="w-full bg-8D7FC7 font-circe font-bold rounded-[1.875rem] p-3 text-white flex justify-center items-center text-lg mb-4"
           type="submit"
-          onClick={logIn}
+          onClick={handleSubmit}
         >
           Войти
         </button>

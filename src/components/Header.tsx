@@ -1,17 +1,24 @@
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+import { useAppDispatch } from "../models/hooks";
+import { authActions } from "../models/authorization/";
+
 import sprites from "../images/sprites.svg";
 import avatarImage from "../images/avatar.jpg";
 
 const Header: React.FC = () => {
   const [exitWindowActive, setExitWindowActive] = useState<boolean>(false);
-  const navigate = useNavigate();
+
   const location = useLocation();
 
-  const isMainPage = location.pathname === "/main";
+  const dispatch = useAppDispatch();
+  const { logOut } = authActions;
 
-  const logOut = () => {
-    navigate("/");
+  const isMainPage = location.pathname === "/";
+
+  const handleExit = () => {
+    dispatch(logOut());
   };
 
   return (
@@ -92,7 +99,7 @@ const Header: React.FC = () => {
           </ul>
           <div
             className="flex justify-between p-2 items-center"
-            onClick={logOut}
+            onClick={handleExit}
           >
             <span className="cursor-pointer font-circe text-base text-008AFF">
               Выход
